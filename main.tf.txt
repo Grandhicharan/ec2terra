@@ -1,8 +1,3 @@
-provider "aws" {
-    access_key = "${var.aws_access_key}"
-    secret_key = "${var.aws_secret_key}"
-    region     = "${var.region}"
-    }
 resource "aws_instance" "os" {
   ami = "ami-0e5e4bbcbd7349cac"
   instance_type = "t2.micro"                               
@@ -30,3 +25,5 @@ resource "aws_instance" "os" {
     delete_on_termination = "false"
 }
 }
+variable "aws_access_key" {}                                                                  
+variable "aws_secret_key" {}
